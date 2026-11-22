@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="كتلوك ريمورا للعدسات الملونة - تصفحي كل الألوان واطلبي بالدايركت @rimora_co">
+<meta property="og:title" content="كتلوك ريمورا | Rimora Colored Contact Lenses">
+<meta property="og:description" content="لكل نظرة لون، ولكل لون حكاية. تصفحي الألوان واطلبي بالدايركت.">
+<meta property="og:image" content="https://munali123.github.io/rimora/img/hero.jpg">
+<meta property="og:url" content="https://munali123.github.io/rimora/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1d1311">
+<title>كتلوك ريمورا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Reem+Kufi:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: couture lookbook - hushed, luxurious, youthful; Iraqi dialect
+   IDEA: a printed lens lookbook opened in a dark boutique, blossoms drifting across the pages
+   PICTURE: full-bleed cover portrait with slow camera drift, then every colour as a full uncropped portrait
+   COLOUR and TYPE: blush #f7e9e4, cocoa #1d1311, champagne gold #c9a27e; Reem Kufi + Tajawal, Cormorant italic for names
+   LAYOUT: splash, cover, name ribbon, dark collection gallery, lookbook pages strip, order band, full-res viewer */
+:root{--blush:#f7e9e4;--blush2:#fff6f2;--cocoa:#1d1311;--cocoa2:#2a1c19;--gold:#c9a27e;--gold2:#e8cfb3;--ink:#3a2620;--soft:#7d6157;--line:#ead3ca}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blush);color:var(--ink);font:16px/1.75 "Tajawal",system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:"Reem Kufi","Tajawal",sans-serif;line-height:1.2;text-wrap:balance;margin:0;font-weight:600}
+.lat{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;letter-spacing:.01em}
+.wrap{max-width:1240px;margin-inline:auto}
+.band{padding:clamp(40px,7vw,110px) max(5vw,16px)}
+.gold{background:linear-gradient(100deg,#a9805e 0%,#f3dcc2 22%,#b88d69 45%,#f6e2cb 62%,#a9805e 85%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* splash */
+#splash{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 45%,#3a2521,var(--cocoa) 70%);display:grid;place-items:center;transition:opacity .9s,visibility .9s}
+#splash.out{opacity:0;visibility:hidden}
+.mono{text-align:center}
+.mono .rm{font-family:"Cormorant Garamond",serif;font-size:clamp(84px,18vw,150px);line-height:.9;font-weight:500}
+.mono .word{display:flex;justify-content:center;gap:.04em;font-family:"Cormorant Garamond",serif;font-size:clamp(34px,7vw,56px);color:var(--gold2);direction:ltr}
+.mono .word span{opacity:0;transform:translateY(18px);animation:up .8s forwards}
+.mono .rule{height:1px;width:0;margin:14px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:grow 1.4s .6s forwards}
+.mono small{display:block;color:#bfa491;letter-spacing:.3em;font-size:12px;direction:ltr;opacity:0;animation:up 1s 1.2s forwards}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes grow{to{width:min(320px,70vw)}}
+
+#petals{position:fixed;inset:0;pointer-events:none;z-index:30}
+
+/* cover */
+.cover{position:relative;height:min(100svh,980px);min-height:560px;overflow:hidden;background:#f3dfd8}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 25%;animation:kb 22s ease-in-out infinite alternate;transform-origin:65% 35%}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16) translate(-1.5%,1%)}}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(247,233,228,.75) 75%,var(--blush))}
+.ctext{position:absolute;inset:auto 0 0;z-index:2;text-align:center;padding:0 16px clamp(30px,6vh,70px)}
+.ctext h1{font-size:clamp(32px,5.6vw,58px);color:var(--ink)}
+.ctext p{max-width:44ch;margin:12px auto 0;color:var(--soft);font-size:17px}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+.cta{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border-radius:999px;background:var(--cocoa);color:var(--gold2);text-decoration:none;font-weight:700;border:0;cursor:pointer;white-space:nowrap}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,235,210,.35) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 3.6s 2.5s infinite}
+@keyframes sweep{40%,100%{transform:translateX(120%)}}
+.cta.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.cta.line::after{display:none}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ribbon */
+.ribbon{background:var(--cocoa);overflow:hidden;padding:18px 0;border-block:1px solid #3d2a25}
+.track{display:flex;width:max-content;gap:40px;animation:mq 40s linear infinite;direction:ltr}
+.track span{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(24px,3.4vw,36px);color:var(--gold2);white-space:nowrap}
+.track i{color:var(--gold);font-style:normal;align-self:center;font-size:14px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* collection */
+.dark{background:radial-gradient(ellipse at 50% 0,#33221e,var(--cocoa) 60%);color:#f4e4dc}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:18px;margin-bottom:clamp(24px,4vw,44px)}
+.head h2{font-size:clamp(32px,5vw,52px)}
+.head p{margin:6px 0 0;color:#bfa491}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;border:1px solid #4a3530;background:transparent;color:#ead6cb;cursor:pointer;transition:.3s}
+.chip[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:var(--cocoa);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,26px)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{all:unset;box-sizing:border-box;cursor:pointer;display:block;position:relative;perspective:900px}
+.card .in{position:relative;border-radius:18px;overflow:hidden;background:#2a1c19;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;box-shadow:0 20px 50px -30px #000}
+.card img.f{width:100%;aspect-ratio:1754/2480;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover img.f{transform:scale(1.05)}
+.card .in::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,230,205,.28) 50%,transparent 65%);transform:translateX(-130%);transition:transform 1s}
+.card:hover .in::after{transform:translateX(130%)}
+.card:hover .in{box-shadow:0 30px 60px -28px #000,0 0 0 1px #c9a27e66}
+.card .eye{position:absolute;top:10px;inset-inline-end:10px;width:clamp(58px,26%,92px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:2px solid var(--gold);box-shadow:0 8px 20px -6px #000;z-index:2}
+.card .eye img{width:100%;height:100%;object-fit:cover}
+.card .t{padding:12px 4px 0;display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap}
+.card .t b{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:clamp(20px,2.2vw,26px);color:#fbeee6;white-space:nowrap}
+.card .t small{color:var(--gold);font-size:13px;white-space:nowrap}
+.card:focus-visible .in{outline:2px solid var(--gold);outline-offset:3px}
+
+/* pages strip */
+.strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin}
+.pg{all:unset;cursor:zoom-in;flex:0 0 min(78vw,380px);scroll-snap-align:center;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px -30px #6b3a2e}
+.pg img{width:100%;aspect-ratio:1754/2480;object-fit:cover}
+.sub{color:var(--soft);margin:8px 0 0}
+
+/* order */
+.order{text-align:center;background:var(--blush2)}
+.order h2{font-size:clamp(32px,5vw,52px)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:34px 0}
+@media(max-width:700px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 20px}
+.step em{display:block;font-family:"Cormorant Garamond",serif;font-size:34px;color:var(--gold);line-height:1}
+.step h3{font-size:20px;margin:6px 0}
+.step p{margin:0;color:var(--soft)}
+.handle{display:inline-block;direction:ltr;margin-top:14px;font-size:24px}
+footer{background:var(--cocoa);color:#bfa491;text-align:center;padding:34px 16px;font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:.08em}
+
+/* viewer */
+.view{position:fixed;inset:0;z-index:40;background:var(--cocoa);color:#f4e4dc;display:none;overflow:auto}
+.view.on{display:block;animation:vin .5s}
+@keyframes vin{from{opacity:0}to{opacity:1}}
+.vbar{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px max(4vw,12px);background:rgba(29,19,17,.92);backdrop-filter:blur(8px);border-bottom:1px solid #3d2a25}
+.nav{min-width:44px;min-height:44px;border-radius:50%;border:1px solid #4a3530;background:#2a1c19;color:var(--gold2);font-size:19px;cursor:pointer}
+.ctr{color:#bfa491;direction:ltr;font-family:"Cormorant Garamond",serif;font-size:18px}
+.vbody{max-width:1180px;margin:0 auto;padding:22px max(4vw,14px) 50px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(18px,4vw,54px);align-items:start}
+.photo{position:relative;border-radius:22px;overflow:hidden;background:#2a1c19;aspect-ratio:1754/2480;cursor:zoom-in}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .7s,transform .7s}
+.photo .lo{filter:blur(10px);transform:scale(1.03)}
+.photo .hi{opacity:0}
+.photo .hi.ok{opacity:1}
+.photo.swap img{opacity:0!important;transform:scale(1.02)}
+.vinfo{position:sticky;top:90px}
+.vinfo h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:clamp(42px,7vw,72px);direction:ltr;text-align:right;line-height:1}
+.vinfo .fam{color:var(--gold);font-weight:700;margin-top:10px}
+.vinfo .eyebig{margin:22px 0;border-radius:18px;overflow:hidden;border:1px solid #4a3530}
+.vinfo .eyebig img{width:100%;aspect-ratio:452/413;object-fit:cover}
+.vinfo p{color:#c9b0a4;margin:0 0 12px}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+.view .cta{background:var(--gold);color:var(--cocoa)}
+.view .cta.line{background:transparent;color:var(--gold2);border-color:#6b5048}
+.toast{min-height:1.8em;color:var(--gold2);font-weight:700;margin-top:10px}
+.hint{color:#8f7469;font-size:13px;margin-top:8px}
+@media(max-width:760px){.vbody{grid-template-columns:1fr}.vinfo{position:static}.vinfo .eyebig{display:none}}
+
+/* zoom */
+.zoom{position:fixed;inset:0;z-index:60;background:#0f0908;display:none;overflow:auto;cursor:zoom-out}
+.zoom.on{display:block}
+.zoom img{width:max(100vw,1754px);max-width:none;height:auto;margin:auto}
+.zoom.fit img{width:auto;max-width:100%;max-height:100svh;margin:0 auto}
+.zbar{position:fixed;top:12px;left:12px;z-index:61;display:none;gap:8px}
+.zoom.on+.zbar{display:flex}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.mono .word span,.mono small{opacity:1;transform:none}.mono .rule{width:200px}#petals{display:none}}
+</style>
+</head>
+<body>
+
+<div id="splash" aria-hidden="true">
+  <div class="mono">
+    <div class="rm gold">RM</div>
+    <div class="rule"></div>
+    <div class="word" id="word"></div>
+    <small>COLORED CONTACT LENSES</small>
+  </div>
+</div>
+<canvas id="petals"></canvas>
+
+<header class="cover">
+  <img src="img/hero.jpg" alt="ريمورا - عدسات ملونة" fetchpriority="high">
+  <div class="ctext">
+    <h1 class="reveal"><span class="gold">ريمورا</span> .. لكل نظرة لون، ولكل لون حكاية</h1>
+    <p class="reveal">من دفء البني إلى هدوء الرمادي وجاذبية الأخضر.. اكتشفي ألوان ريمورا واختاري الدرجة اللي تكمّل ملامحج وتعبّر عن أسلوبج.</p>
+    <div class="btns reveal"><a class="cta" href="#colors">تصفّحي الألوان</a><a class="cta line" href="#order">شلون أطلب؟</a></div>
+  </div>
+</header>
+
+<div class="ribbon" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section class="band dark" id="colors">
+  <div class="wrap">
+    <div class="head">
+      <div class="reveal"><h2>المجموعة الكاملة</h2><p id="count"></p></div>
+      <div class="chips reveal" role="group" aria-label="فلترة حسب اللون">
+        <button class="chip" data-f="all" aria-pressed="true">الكل</button>
+        <button class="chip" data-f="brown" aria-pressed="false">بني وعسلي</button>
+        <button class="chip" data-f="gray" aria-pressed="false">رمادي</button>
+        <button class="chip" data-f="green" aria-pressed="false">أخضر</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="band" id="pages">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:26px"><h2 style="font-size:clamp(30px,4.6vw,46px)">صفحات الكتلوك</h2><p class="sub">اضغطي على أي صفحة حتى تفتحيها بالدقة الكاملة.</p></div>
+    <div class="strip reveal" id="strip"></div>
+  </div>
+</section>
+
+<section class="band order" id="order">
+  <div class="wrap">
+    <h2 class="reveal">أي لون <span class="gold">خطف عينج؟</span></h2>
+    <p class="sub reveal">دزّيلنا اسمه أو صورته بالدايركت، ونساعدج تختارين الأقرب لذوقج.</p>
+    <div class="steps">
+      <div class="step reveal"><em>i</em><h3>اختاري اللون</h3><p>اضغطي على أي لون حتى تشوفيه على الوجه وعلى العين من قريب.</p></div>
+      <div class="step reveal"><em>ii</em><h3>انسخي الاسم</h3><p>بزر "انسخي اسم اللون" أو خذي سكرين شوت للصورة.</p></div>
+      <div class="step reveal"><em>iii</em><h3>دزّيه بالدايركت</h3><p>راسلينا على انستغرام ونكمّل وياج الطلب لحد باب البيت.</p></div>
+    </div>
+    <a class="cta reveal" href="https://ig.me/m/rimora_co">راسلينا على انستغرام</a>
+    <div><span class="handle lat gold">@rimora_co</span></div>
+  </div>
+</section>
+
+<footer>Rimora · Colored Contact Lenses</footer>
+
+<div class="view" id="view" role="dialog" aria-modal="true" aria-labelledby="vname">
+  <div class="vbar">
+    <button class="nav" id="close" aria-label="إغلاق">✕</button>
+    <span class="ctr" id="ctr"></span>
+    <div style="display:flex;gap:8px">
+      <button class="nav" id="prev" aria-label="اللون السابق">→</button>
+      <button class="nav" id="next" aria-label="اللون التالي">←</button>
+    </div>
+  </div>
+  <div class="vbody">
+    <div>
+      <div class="photo" id="photo" title="اضغطي للتكبير"><img class="lo" id="vlo" alt=""><img class="hi" id="vhi" alt=""></div>
+      <div class="hint">اضغطي على الصورة حتى تكبريها بالدقة الكاملة.</div>
+    </div>
+    <div class="vinfo">
+      <h2 id="vname"></h2>
+      <div class="fam" id="vfam"></div>
+      <div class="eyebig"><img id="veye" alt=""></div>
+      <p>عجبج هذا اللون؟ انسخي اسمه ودزّيه إلنا بالدايركت.</p>
+      <div class="acts">
+        <button class="cta" id="copy">انسخي اسم اللون</button>
+        <a class="cta line" href="https://ig.me/m/rimora_co">اطلبيه بالدايركت</a>
+      </div>
+      <div class="toast" id="toast" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+<div class="zoom" id="zoom" dir="ltr" role="dialog" aria-modal="true" aria-label="الصورة بالدقة الكاملة"><img id="zimg" alt=""></div>
+<div class="zbar"><button class="nav" id="zclose" aria-label="إغلاق التكبير">✕</button><button class="nav" id="zfit" aria-label="ملائمة الشاشة">⤢</button></div>
+
+<script>
+{
+const C=[
+ ["oat-latte","Oat Latte","brown"],["dawn-beige","Dawn Beige","brown"],["soft-hazel","Soft Hazel","brown"],
+ ["mist-gray","Mist Gray","gray"],["olive-dew","Olive Dew","green"],["silver-ash","Silver Ash","gray"],
+ ["jade-veil","Jade Veil","green"],["nude-brown","Nude Brown","brown"],["moon-veil","Moon Veil","green"],
+ ["cream-mocha","Cream Mocha","brown"],["sepia-bloom","Sepia Bloom","brown"],["ash-moon","Ash Moon","gray"]];
+const FAM={brown:"بني وعسلي",gray:"رمادي",green:"أخضر"};
+const PAGES=["page1a","page1b","page2a","page2b",...C.map(c=>"face-"+c[0])];
+const $=id=>document.getElementById(id);
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* splash */
+$('word').innerHTML=[..."Rimora"].map((l,i)=>`<span style="animation-delay:${.25+i*.09}s">${l}</span>`).join('');
+const hideSplash=()=>$('splash').classList.add('out');
+setTimeout(hideSplash,RM?300:2600);$('splash').addEventListener('click',hideSplash);
+
+/* ribbon */
+const names=C.map(c=>`<span>${c[1]}</span><i>✦</i>`).join('');
+$('track').innerHTML=names+names;
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const watch=root=>root.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+/* grid */
+let shown=C,cur=0,filter='all';
+const grid=$('grid');
+const render=()=>{
+  shown=filter==='all'?C:C.filter(c=>c[2]===filter);
+  $('count').textContent=shown.length+' لون · اضغطي على أي لون حتى تشوفيه كامل';
+  grid.innerHTML=shown.map((c,i)=>`<button class="card reveal" style="transition-delay:${(i%4)*90}ms" data-i="${i}" aria-label="${c[1]}">
+    <div class="in"><img class="f" loading="lazy" src="img/face-${c[0]}-s.jpg" alt="عدسة ${c[1]} على الوجه"><div class="eye"><img loading="lazy" src="img/eye-${c[0]}.jpg" alt=""></div></div>
+    <div class="t"><b>${c[1]}</b><small>${FAM[c[2]]}</small></div></button>`).join('');
+  watch(grid);
+};
+grid.addEventListener('pointermove',e=>{
+  if(RM||e.pointerType!=='mouse')return;const b=e.target.closest('.card');if(!b)return;
+  const r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  b.querySelector('.in').style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-6px)`;
+});
+grid.addEventListener('pointerout',e=>{const b=e.target.closest('.card');if(b&&!b.contains(e.relatedTarget))b.querySelector('.in').style.transform='';});
+grid.addEventListener('click',e=>{const b=e.target.closest('.card');if(b)open(+b.dataset.i);});
+const syncChips=()=>document.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===filter));
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f;syncChips();render();}));
+
+/* pages strip */
+$('strip').innerHTML=PAGES.map(p=>`<button class="pg" data-p="${p}" aria-label="فتح الصفحة"><img loading="lazy" src="img/${p}-s.jpg" alt="صفحة من كتلوك ريمورا"></button>`).join('');
+$('strip').addEventListener('click',e=>{const b=e.target.closest('.pg');if(b)zoom('img/'+b.dataset.p+'.jpg');});
+
+/* viewer */
+const view=$('view'),photo=$('photo'),hi=$('vhi'),lo=$('vlo'),toast=$('toast');
+const open=(i,push)=>{
+  cur=(i+shown.length)%shown.length;const c=shown[cur];
+  photo.classList.add('swap');
+  setTimeout(()=>{
+    lo.src='img/face-'+c[0]+'-s.jpg';hi.classList.remove('ok');
+    hi.onload=()=>hi.classList.add('ok');hi.src='img/face-'+c[0]+'.jpg';hi.alt='عدسة '+c[1]+' على الوجه';
+    if(hi.complete)hi.classList.add('ok');
+    $('veye').src='img/eye-'+c[0]+'.jpg';$('veye').alt='عدسة '+c[1]+' من قريب';
+    $('vname').textContent=c[1];$('vfam').textContent=FAM[c[2]];
+    $('ctr').textContent=(cur+1)+' / '+shown.length;toast.textContent='';
+    photo.classList.remove('swap');
+  },view.classList.contains('on')&&!RM?260:0);
+  if(!view.classList.contains('on')){view.classList.add('on');document.body.style.overflow='hidden';view.scrollTop=0;}
+  const nx=shown[(cur+1)%shown.length];new Image().src='img/face-'+nx[0]+'.jpg';
+  if(push!==false&&location.hash!=='#'+c[0])history.replaceState(null,'','#'+c[0]);
+};
+const close=()=>{view.classList.remove('on');document.body.style.overflow='';history.replaceState(null,'',location.pathname+'#colors');};
+$('close').addEventListener('click',close);
+$('prev').addEventListener('click',()=>open(cur-1));
+$('next').addEventListener('click',()=>open(cur+1));
+photo.addEventListener('click',()=>zoom('img/face-'+shown[cur][0]+'.jpg',true));
+let sx=null;view.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+view.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>60)open(d>0?cur+1:cur-1);sx=null;});
+$('copy').addEventListener('click',async()=>{
+  const t='حابة أطلب عدسات ريمورا لون '+shown[cur][1];
+  try{await navigator.clipboard.writeText(t);toast.textContent='انتسخ ✓ هسه دزّيه بالدايركت';}
+  catch(err){toast.textContent='اسم اللون: '+shown[cur][1];}
+});
+
+/* zoom */
+const zm=$('zoom');
+const zoom=(src,eye)=>{const im=$('zimg');zm.classList.add('on');zm.classList.toggle('fit',!eye);document.body.style.overflow='hidden';
+  const go=()=>{if(!eye)return;zm.scrollLeft=im.offsetWidth*.68-zm.clientWidth/2;zm.scrollTop=im.offsetHeight*.31-zm.clientHeight/2;};
+  im.onload=go;im.src=src;if(im.complete)requestAnimationFrame(go);};
+const unzoom=()=>{zm.classList.remove('on');if(!view.classList.contains('on'))document.body.style.overflow='';};
+zm.addEventListener('click',unzoom);$('zfit').addEventListener('click',e=>e.stopPropagation());$('zclose').addEventListener('click',unzoom);
+$('zfit').addEventListener('click',()=>zm.classList.toggle('fit'));
+
+document.addEventListener('keydown',e=>{
+  if(zm.classList.contains('on')){if(e.key==='Escape')unzoom();return;}
+  if(!view.classList.contains('on'))return;
+  if(e.key==='Escape')close();if(e.key==='ArrowLeft')open(cur+1);if(e.key==='ArrowRight')open(cur-1);});
+const fromHash=()=>{const h=location.hash.slice(1),k=C.findIndex(c=>c[0]===h);if(k>-1){filter='all';syncChips();render();open(k,false);}};
+window.addEventListener('hashchange',fromHash);
+
+/* petals */
+const cv=$('petals'),cx=cv.getContext('2d');let W,H,P=[],run=!RM;
+const size=()=>{const d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);};
+size();addEventListener('resize',size);
+const N=innerWidth<600?12:22;
+const mk=top=>({x:Math.random()*W,y:top?-20:Math.random()*H,s:6+Math.random()*9,vy:.35+Math.random()*.7,vx:-.3+Math.random()*.6,a:Math.random()*6.28,va:-.02+Math.random()*.04,w:Math.random()*6.28,o:.45+Math.random()*.45});
+for(let i=0;i<N;i++)P.push(mk(false));
+const draw=()=>{
+  if(!run)return;cx.clearRect(0,0,W,H);
+  for(const p of P){
+    p.w+=.02;p.x+=p.vx+Math.sin(p.w)*.5;p.y+=p.vy;p.a+=p.va;
+    if(p.y>H+20)Object.assign(p,mk(true));
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.a);cx.scale(1,Math.abs(Math.cos(p.w))*.6+.4);cx.globalAlpha=p.o;
+    const g=cx.createLinearGradient(-p.s,0,p.s,0);g.addColorStop(0,'#f7c6cf');g.addColorStop(1,'#e999ab');
+    cx.fillStyle=g;cx.beginPath();cx.moveTo(0,-p.s);cx.bezierCurveTo(p.s,-p.s*.6,p.s*.8,p.s*.6,0,p.s);cx.bezierCurveTo(-p.s*.8,p.s*.6,-p.s,-p.s*.6,0,-p.s);cx.fill();cx.restore();
+  }
+  requestAnimationFrame(draw);
+};
+document.addEventListener('visibilitychange',()=>{run=!document.hidden&&!RM;if(run)draw();});
+draw();
+
+render();watch(document);fromHash();
+}
+</script>
+</body>
+</html>
