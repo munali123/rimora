@@ -48,11 +48,13 @@ button{font:inherit}
 #petals{position:fixed;inset:0;pointer-events:none;z-index:30}
 
 /* cover */
-.cover{position:relative;height:min(100svh,980px);min-height:560px;overflow:hidden;background:#f3dfd8}
+.cover{position:relative;height:min(clamp(380px,60vw,820px),82svh);overflow:hidden;background:#f3dfd8}
 .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 25%;animation:kb 22s ease-in-out infinite alternate;transform-origin:65% 35%}
+@media(max-width:600px){.cover{height:auto}.cover img{position:relative;height:auto;aspect-ratio:1754/1071;animation:kbm 18s ease-in-out infinite alternate;transform-origin:70% 40%}}
+@keyframes kbm{from{transform:scale(1)}to{transform:scale(1.05)}}
 @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16) translate(-1.5%,1%)}}
-.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(247,233,228,.75) 75%,var(--blush))}
-.ctext{position:absolute;inset:auto 0 0;z-index:2;text-align:center;padding:0 16px clamp(30px,6vh,70px)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,var(--blush))}
+.ctext{position:relative;z-index:2;text-align:center;padding:clamp(8px,2vw,24px) 16px clamp(40px,7vw,80px);margin-top:-10px}
 .ctext h1{font-size:clamp(32px,5.6vw,58px);color:var(--ink)}
 .ctext p{max-width:44ch;margin:12px auto 0;color:var(--soft);font-size:17px}
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
@@ -166,12 +168,12 @@ footer{background:var(--cocoa);color:#bfa491;text-align:center;padding:34px 16px
 
 <header class="cover">
   <img src="img/hero.jpg" alt="ريمورا - عدسات ملونة" fetchpriority="high">
+</header>
   <div class="ctext">
     <h1 class="reveal"><span class="gold">ريمورا</span> .. لكل نظرة لون، ولكل لون حكاية</h1>
     <p class="reveal">من دفء البني إلى هدوء الرمادي وجاذبية الأخضر.. اكتشفي ألوان ريمورا واختاري الدرجة اللي تكمّل ملامحج وتعبّر عن أسلوبج.</p>
     <div class="btns reveal"><a class="cta" href="#colors">تصفّحي الألوان</a><a class="cta line" href="#order">شلون أطلب؟</a></div>
   </div>
-</header>
 
 <div class="ribbon" aria-hidden="true"><div class="track" id="track"></div></div>
 
